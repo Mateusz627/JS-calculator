@@ -69,22 +69,34 @@ function showResult() {
             break
     }
 
+    addToHistory()
+    historyBtn.classList.add('active')
     currentNumber.innerHTML = result
     previousNumber.innerHTML = ''
     mathSign.innerHTML = ''
 }
 
-
-
-function clearScreen() {
-
+function addToHistory() {
+    const newHistoryItem = document.createElement('li')
+    newHistoryItem.innerHTML = `${currentNumber.innerHTML} ${mathSign.innerHTML} ${previousNumber.innerHTML} = ${result}`
+    newHistoryItem.classList.add('history-item')
+    calculatorHistory.appendChild(newHistoryItem)
 }
 
 function clearHistory() {
-
+    calculatorHistory.textContent = ''
+    if(calculatorHistory.textContent === '') {
+        historyBtn.classList.remove('active')
+    }
 }
 
 
+function clearScreen() {
+    result = ''
+    currentNumber.innerHTML = ''
+    previousNumber.innerHTML = ''
+    mathSign.innerHTML = ''
+}
 
 
 // Nasluchiwanie przyciskow
