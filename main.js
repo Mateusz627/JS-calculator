@@ -17,3 +17,41 @@ const calculatorHistory = document.querySelector('.history')
 const historyBtn = document.querySelector('.history-btn')
 
 let result = ''
+
+
+function displayNumbers() {
+
+}
+
+function showResult() {
+
+}
+
+function operate() {
+
+}
+
+function clearScreen() {
+
+}
+
+function clearHistory() {
+
+}
+
+
+
+
+// Nasluchiwanie przyciskow
+
+operatorsButtons.forEach((button) => button.addEventListener('click', operate))
+
+equalsButton.addEventListener('click', showResult)
+
+clearButton.addEventListener('click', clearScreen)
+
+numbersButtons.forEach((button) => {
+    button.addEventListener('click', displayNumbers)
+})
+
+historyBtn.addEventListener('click', clearHistory)
